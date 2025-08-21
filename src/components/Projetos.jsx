@@ -7,7 +7,7 @@ const idiomas = [
 ];
 
 const Idiomas = () => (
-  <section id="idiomas" className="py-5 bg-light">
+  <section id="Projetos" className="py-5 bg-light">
     <div className="container">
       <h2 className="mb-4">Idiomas</h2>
       <ul className="list-unstyled">
@@ -21,4 +21,4 @@ const Idiomas = () => (
   </section>
 );
 
-export default Idiomas;
+export default Projetos;

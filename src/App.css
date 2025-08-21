@@ -1,0 +1,366 @@
+/* ===============================
+   Variáveis
+=================================*/
+:root {
+  --bg: #fdfaf6;
+  --text: #333;
+  --accent: #6c63ff;
+  --accent-light: #8e87ff;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+  --radius: 12px;
+  --transition: all 0.4s ease;
+}
+
+/* Tema escuro */
+body.dark {
+  --bg: #1a1a1a;
+  --text: #eee;
+  --accent: #8e87ff;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===============================
+   Reset
+=================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Estrutura Base
+=================================*/
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+/* ===============================
+   Header
+=================================*/
+.site-header {
+  padding: 1.5rem 0;
+  background: var(--bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: var(--transition);
+}
+
+.logo,
+.navbar-brand {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  color: var(--accent);
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text) !important;
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile toggle */
+.mobile-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+/* ===============================
+   Hero
+=================================*/
+.hero {
+  text-align: center;
+  padding: 8rem 1rem 6rem;
+  background: linear-gradient(135deg, #fff, #f3f1ff);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h2 {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeUp 1.4s ease forwards;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+}
+
+.cta:hover {
+  background: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-down {
+  margin-top: 3rem;
+  font-size: 2rem;
+  color: var(--accent);
+  animation: bounce 2s infinite;
+}
+
+/* ===============================
+   Seções
+=================================*/
+.section {
+  padding: 5rem 1rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: var(--transition);
+}
+
+.section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section h2 {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ===============================
+   Cards / Grid
+=================================*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+  text-align: center;
+}
+
+body.dark .card {
+  background: #2c2c2c;
+}
+
+.card h3,
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   Timeline de Experiência
+=================================*/
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--accent);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.timeline-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item span {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+/* ===============================
+   Contato
+=================================*/
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contact-grid a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-grid a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Footer
+=================================*/
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f0f0f0;
+  font-size: 0.9rem;
+}
+
+body.dark .footer {
+  background: #111;
+}
+
+/* ===============================
+   Botão de Tema e Mobile
+=================================*/
+.theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--accent-light);
+  transform: scale(1.05);
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav.open .nav ul {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+/* ===============================
+   Animações
+=================================*/
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import Hero from './components/Hero';
 import Sobre from './components/Sobre';
@@ -8,7 +9,6 @@ import Idiomas from './components/Idiomas';
 import Certificacoes from './components/Certificacoes';
 import Contato from './components/Contato';
 import Footer from './components/Footer';
-import './App.css';
 
 function App() {
   return (

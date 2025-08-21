@@ -1,4 +1,4 @@
-"homepage": "https://jmc-codes.github.io/jmc.portifolio/",
+"homepage": "https://jmc-codes.github.io/jmc.portifolio",
 "scripts": {
   "start": "react-scripts start",
   "build": "react-scripts build",

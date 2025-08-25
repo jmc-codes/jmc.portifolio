@@ -1,0 +1,308 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { Card, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+import { portfolioData } from '../data/portfolio';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import * as LucideIcons from 'lucide-react';
+import { ExternalLink, Github, ChevronRight } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Projects = () => {
+  const sectionRef = useRef(null);
+  const projectsRef = useRef(null);
+  const [activeFilter, setActiveFilter] = useState('Todos');
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Get unique categories
+  const categories = ['Todos', ...new Set(portfolioData.projects.map(project => project.category))];
+
+  // Filter projects
+  const filteredProjects = activeFilter === 'Todos' 
+    ? portfolioData.projects 
+    : portfolioData.projects.filter(project => project.category === activeFilter);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate section entrance
+      gsap.fromTo(sectionRef.current.querySelector('.section-header'),
+        {
+          opacity: 0,
+          y: 50
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+      // Animate filter buttons
+      const filterButtons = sectionRef.current.querySelectorAll('.filter-btn');
+      gsap.fromTo(filterButtons,
+        {
+          opacity: 0,
+          y: 20
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 70%",
+            end: "bottom 30%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+      // Animate project cards
+      const projectCards = projectsRef.current?.querySelectorAll('.project-card');
+      if (projectCards) {
+        gsap.fromTo(projectCards,
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.9
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: projectsRef.current,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [filteredProjects]);
+
+  const getIcon = (iconName) => {
+    const Icon = LucideIcons[iconName];
+    return Icon ? <Icon className="h-6 w-6" /> : null;
+  };
+
+  const handleFilterChange = (filter) => {
+    if (filter !== activeFilter) {
+      // Animate out current projects
+      const projectCards = projectsRef.current?.querySelectorAll('.project-card');
+      if (projectCards) {
+        gsap.to(projectCards, {
+          opacity: 0,
+          y: -20,
+          duration: 0.3,
+          stagger: 0.05,
+          ease: "power2.in",
+          onComplete: () => {
+            setActiveFilter(filter);
+            // Animate in new projects will be handled by useEffect
+          }
+        });
+      } else {
+        setActiveFilter(filter);
+      }
+    }
+  };
+
+  return (
+    <section id="projects" ref={sectionRef} className="py-20 gradient-bg">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="section-header text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              Meus <span className="text-gradient">Projetos</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Soluções desenvolvidas que demonstram minha expertise técnica e impacto nos negócios
+            </p>
+          </div>
+
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleFilterChange(category)}
+                className={`filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeFilter === category
+                    ? 'bg-primary text-primary-foreground shadow-lg'
+                    : 'bg-secondary text-secondary-foreground hover:bg-primary/10'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Projects Grid */}
+          <div ref={projectsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
+              <Card key={project.id} className="project-card card-hover group cursor-pointer overflow-hidden">
+                <CardContent className="p-0">
+                  {/* Project Header */}
+                  <div className="p-6 pb-4">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                        {getIcon(project.icon)}
+                      </div>
+                      <Badge variant="secondary">{project.category}</Badge>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Project Highlights */}
+                  <div className="px-6 pb-4">
+                    <div className="space-y-2">
+                      {project.highlights.slice(0, 2).map((highlight, highlightIndex) => (
+                        <div key={highlightIndex} className="flex items-start space-x-2">
+                          <ChevronRight className="h-3 w-3 text-primary mt-1 flex-shrink-0" />
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {highlight}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Project Actions */}
+                  <div className="px-6 pb-6">
+                    <div className="flex space-x-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1"
+                        onClick={() => setSelectedProject(project)}
+                      >
+                        Ver Detalhes
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="px-3"
+                      >
+                        <Github className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="px-3"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Project Modal/Details */}
+          {selectedProject && (
+            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+              <Card className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                        {getIcon(selectedProject.icon)}
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
+                        <Badge variant="secondary">{selectedProject.category}</Badge>
+                      </div>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setSelectedProject(null)}
+                    >
+                      ✕
+                    </Button>
+                  </div>
+
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {selectedProject.description}
+                  </p>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3">Tecnologias Utilizadas</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech, index) => (
+                        <Badge key={index} variant="outline">{tech}</Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3">Principais Características</h4>
+                    <div className="space-y-3">
+                      {selectedProject.highlights.map((highlight, index) => (
+                        <div key={index} className="flex items-start space-x-3">
+                          <ChevronRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                          <p className="text-muted-foreground leading-relaxed">{highlight}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <Button className="flex-1">
+                      <Github className="h-4 w-4 mr-2" />
+                      Ver Código
+                    </Button>
+                    <Button variant="outline" className="flex-1">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Demo Live
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
+

@@ -248,7 +248,8 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
+                
+            {/* Contact Form 
             <Card ref={formRef} className="card-hover">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Envie uma Mensagem</h3>
@@ -361,6 +362,11 @@ const Contact = () => {
                 </form>
               </CardContent>
             </Card>
+                  */}
+
+
+
+
           </div>
         </div>
       </div>

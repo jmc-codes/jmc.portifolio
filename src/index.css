@@ -145,3 +145,189 @@ cursor: default;
 display: none;
 }
 }
+
+
+/* Adicione suas variáveis CSS personalizadas aqui */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+ 
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+ 
+  --primary: 221.2 83.2% 53.9%;
+  --primary-foreground: 210 40% 98%;
+ 
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+ 
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+ 
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.9%;
+ 
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+ 
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+ 
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+ 
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+ 
+  --secondary: 217.2 32.4% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+ 
+  --muted: 217.2 32.4% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+ 
+  --accent: 217.2 32.4% 17.5%;
+  --accent-foreground: 210 40% 98%;
+ 
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+ 
+  --border: 217.2 32.4% 17.5%;
+  --input: 217.2 32.4% 17.5%;
+  --ring: 217.2 91.2% 59.8%;
+}
+
+/* Custom styles */
+.text-gradient {
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--muted)/0.5));
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-bar {
+  background-color: hsl(var(--muted));
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  border-radius: 9999px;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-foreground));
+}
+
+/* Hide scrollbar for specific elements if needed */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* General body styles */
+body {
+  font-family: "Inter", sans-serif; /* Use a fonte Inter ou outra de sua preferência */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure full height for main app container */
+#root, html, body, .App {
+  min-height: 100vh;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide default cursor */
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+/* Ensure elements that should have default cursor behave correctly */
+button, a, input, textarea, [role="button"] {
+  cursor: none; /* Keep custom cursor for interactive elements */
+}
+
+/* Override for text selection */
+::selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Ensure the custom cursor is always on top */
+.custom-cursor {
+  z-index: 9999;
+}
+
+/* For the custom cursor to work, hide the default one */
+body {
+  cursor: none;
+}
+
+/* Ensure interactive elements still have the custom cursor */
+button, a, input, textarea, [role="button"] {
+  cursor: none;
+}
+
+/* Add a slight transition to all elements for smoother interactions */
+* {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Ensure the custom cursor is not visible on touch devices */
+@media (pointer: coarse) {
+  body {
+    cursor: default;
+  }
+  .custom-cursor {
+    display: none;
+  }
+}

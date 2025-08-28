@@ -48,6 +48,7 @@
 /* Custom styles */
 .text-gradient {
 background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
@@ -213,6 +214,7 @@ display: none;
 /* Custom styles */
 .text-gradient {
   background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -357,7 +359,7 @@ button, a, input, textarea, [role="button"] {
 }
  
 .section-title-reveal::after {
-  content:
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -379,7 +381,7 @@ button, a, input, textarea, [role="button"] {
 }
  
 .btn-shine::before {
-  content:
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -424,7 +426,7 @@ button, a, input, textarea, [role="button"] {
 }
  
 .timeline-item::before {
-  content:
+  content: "";
   position: absolute;
   left: -11px;
   top: 0;

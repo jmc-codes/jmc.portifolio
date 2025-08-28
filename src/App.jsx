@@ -17,7 +17,7 @@ function App() {
     <PageTransitions>
       <div className="App relative">
         <AnimatedBackground />
-        <CursorFollower />
+    
         <ScrollProgressBar />
         <Header />
         <main className="relative z-10">
@@ -28,6 +28,9 @@ function App() {
           <Projects />
           <Contact />
         </main>
+
+        <CursorFollower />
+        
       </div>
     </PageTransitions>
   );

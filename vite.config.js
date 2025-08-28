@@ -5,7 +5,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),tailwind()],
+  plugins: [react(),tailwindcss()],
   base: '/jmc.portifolio/',
   resolve: {
     alias: {

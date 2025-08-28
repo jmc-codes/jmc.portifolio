@@ -1,4 +1,4 @@
-/** @type {import('tailwind').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
 darkMode: [
 "class"],

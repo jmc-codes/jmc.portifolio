@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwindcss base;
+@tailwindcss components;
+@tailwindcss utilities;
 /* Adicione suas variáveis CSS personalizadas aqui */
 :root {
 --background: 0 0% 100%;

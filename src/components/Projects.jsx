@@ -6,7 +6,7 @@ import { portfolioData } from '../data/portfolio';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as LucideIcons from 'lucide-react';
-import { ExternalLink, Github, ChevronRight } from 'lucide-react';
+import { ExternalLink, Github, ChevronRight, X } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +15,7 @@ const Projects = () => {
   const projectsRef = useRef(null);
   const [activeFilter, setActiveFilter] = useState('Todos');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Get unique categories
   const categories = ['Todos', ...new Set(portfolioData.projects.map(project => project.category))];
@@ -126,6 +127,27 @@ const Projects = () => {
     }
   };
 
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(0); // Reset image index when opening new project
+  };
+
+  const closeProjectModal = () => {
+    setSelectedProject(null);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      (prevIndex + 1) % selectedProject.images.length
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      (prevIndex - 1 + selectedProject.images.length) % selectedProject.images.length
+    );
+  };
+
   return (
     <section id="projects" ref={sectionRef} className="py-20 gradient-bg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -210,7 +232,7 @@ const Projects = () => {
                         variant="outline"
                         size="sm"
                         className="flex-1"
-                        onClick={() => setSelectedProject(project)}
+                        onClick={() => openProjectModal(project)}
                       >
                         Ver Detalhes
                       </Button>
@@ -237,62 +259,123 @@ const Projects = () => {
 
           {/* Project Modal/Details */}
           {selectedProject && (
-            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-              <Card className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="fixed inset-0 bg-black/70 backdrop-blur-md z-[100] flex items-center justify-center p-4 overflow-y-auto">
+              <Card className="max-w-4xl w-full max-h-[95vh] overflow-y-auto relative">
                 <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                        {getIcon(selectedProject.icon)}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
-                        <Badge variant="secondary">{selectedProject.category}</Badge>
-                      </div>
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setSelectedProject(null)}
-                    >
-                      ✕
-                    </Button>
-                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={closeProjectModal}
+                    className="absolute top-4 right-4 z-10"
+                  >
+                    <X className="h-6 w-6" />
+                  </Button>
 
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {selectedProject.description}
-                  </p>
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold mb-3">Tecnologias Utilizadas</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech, index) => (
-                        <Badge key={index} variant="outline">{tech}</Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold mb-3">Principais Características</h4>
-                    <div className="space-y-3">
-                      {selectedProject.highlights.map((highlight, index) => (
-                        <div key={index} className="flex items-start space-x-3">
-                          <ChevronRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                          <p className="text-muted-foreground leading-relaxed">{highlight}</p>
+                  <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Project Info */}
+                    <div className="lg:w-1/2">
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                            {getIcon(selectedProject.icon)}
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
+                            <Badge variant="secondary">{selectedProject.category}</Badge>
+                          </div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      </div>
 
-                  <div className="flex space-x-3">
-                    <Button className="flex-1">
-                      <Github className="h-4 w-4 mr-2" />
-                      Ver Código
-                    </Button>
-                    <Button variant="outline" className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo Live
-                    </Button>
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        {selectedProject.description}
+                      </p>
+
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3">Tecnologias Utilizadas</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedProject.technologies.map((tech, index) => (
+                            <Badge key={index} variant="outline">{tech}</Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3">Principais Características</h4>
+                        <div className="space-y-3">
+                          {selectedProject.highlights.map((highlight, index) => (
+                            <div key={index} className="flex items-start space-x-3">
+                              <ChevronRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                              <p className="text-muted-foreground leading-relaxed">{highlight}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex space-x-3">
+                        {selectedProject.githubLink && (
+                          <Button asChild className="flex-1">
+                            <a href={selectedProject.githubLink} target="_blank" rel="noopener noreferrer">
+                              <Github className="h-4 w-4 mr-2" />
+                              Ver Código
+                            </a>
+                          </Button>
+                        )}
+                        {selectedProject.liveDemoLink && (
+                          <Button asChild variant="outline" className="flex-1">
+                            <a href={selectedProject.liveDemoLink} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="h-4 w-4 mr-2" />
+                              Demo Live
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Image Gallery */}
+                    {selectedProject.images && selectedProject.images.length > 0 && (
+                      <div className="lg:w-1/2 flex flex-col items-center justify-center">
+                        <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden mb-4">
+                          <img 
+                            src={selectedProject.images[currentImageIndex]}
+                            alt={`Screenshot ${currentImageIndex + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                          {selectedProject.images.length > 1 && (
+                            <>
+                              <Button 
+                                variant="ghost" 
+                                size="icon" 
+                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white"
+                                onClick={prevImage}
+                              >
+                                <ChevronRight className="h-5 w-5 rotate-180" />
+                              </Button>
+                              <Button 
+                                variant="ghost" 
+                                size="icon" 
+                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white"
+                                onClick={nextImage}
+                              >
+                                <ChevronRight className="h-5 w-5" />
+                              </Button>
+                            </>
+                          )}
+                        </div>
+                        {selectedProject.images.length > 1 && (
+                          <div className="flex gap-2 mt-2">
+                            {selectedProject.images.map((image, index) => (
+                              <img
+                                key={index}
+                                src={image}
+                                alt={`Thumbnail ${index + 1}`}
+                                className={`w-16 h-16 object-cover rounded-md cursor-pointer border-2 ${index === currentImageIndex ? 'border-primary' : 'border-transparent'}`}
+                                onClick={() => setCurrentImageIndex(index)}
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -305,4 +388,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

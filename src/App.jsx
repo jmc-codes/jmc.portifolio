@@ -14,7 +14,7 @@ import PageTransitions from './components/PageTransitions';
 
 function App() {
   return (
-    <PageTransitions>
+   // <PageTransitions>
       <div className="App relative">
         <AnimatedBackground />
     
@@ -27,12 +27,10 @@ function App() {
           <Skills />
           <Projects />
           <Contact />
-        </main>
-
-       
+        </main>      
         
       </div>
-    </PageTransitions>
+    //</PageTransitions>
   );
 }
 

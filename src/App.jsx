@@ -9,7 +9,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import AnimatedBackground from './components/AnimatedBackground';
 import ScrollProgressBar from './components/ScrollProgressBar';
-import CursorFollower from './components/CursorFollower';
+//import CursorFollower from './components/CursorFollower';
 import PageTransitions from './components/PageTransitions';
 
 function App() {

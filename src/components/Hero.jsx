@@ -21,75 +21,75 @@ const Hero = () => {
       // Main animation timeline
       const tl = gsap.timeline({ delay: 0.5 });
 
-      tl.fromTo(titleRef.current, 
-        { 
-          opacity: 0, 
+      tl.fromTo(titleRef.current,
+        {
+          opacity: 0,
           y: 50,
           scale: 0.9
         },
-        { 
-          opacity: 1, 
+        {
+          opacity: 1,
           y: 0,
           scale: 1,
           duration: 1,
           ease: "power3.out"
         }
       )
-      .fromTo(subtitleRef.current,
-        {
-          opacity: 0,
-          y: 30
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        },
-        "-=0.5"
-      )
-      .fromTo(descriptionRef.current,
-        {
-          opacity: 0,
-          y: 30
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        },
-        "-=0.3"
-      )
-      .fromTo(buttonsRef.current.children,
-        {
-          opacity: 0,
-          y: 20,
-          scale: 0.9
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "back.out(1.7)"
-        },
-        "-=0.2"
-      )
-      .fromTo(scrollIndicatorRef.current,
-        {
-          opacity: 0,
-          y: 20
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out"
-        },
-        "-=0.3"
-      );
+        .fromTo(subtitleRef.current,
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=0.5"
+        )
+        .fromTo(descriptionRef.current,
+          {
+            opacity: 0,
+            y: 30
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=0.3"
+        )
+        .fromTo(buttonsRef.current.children,
+          {
+            opacity: 0,
+            y: 20,
+            scale: 0.9
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "back.out(1.7)"
+          },
+          "-=0.2"
+        )
+        .fromTo(scrollIndicatorRef.current,
+          {
+            opacity: 0,
+            y: 20
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          },
+          "-=0.3"
+        );
 
       // Scroll indicator animation
       gsap.to(scrollIndicatorRef.current, {
@@ -137,18 +137,35 @@ const Hero = () => {
   };
 
   const handleDownloadCV = () => {
-    // Placeholder for CV download functionality
-    console.log('Download CV clicked');
+    console.log('Iniciando download...');
+    const link = document.createElement('a');
+    link.href = 'assets/Profile.pdf';
+    link.download = 'Johnathan_Campos_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    console.log('Download iniciado!');
+  };
+
+   const handleDownloadCL = () => {
+    console.log('Iniciando download...');
+    const link = document.createElement('a');
+    link.href = 'assets/Crt_JMC_Port.pdf';
+    link.download = 'Johnathan_Campos_CL.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    console.log('Download iniciado!');
   };
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg"
     >
       {/* Animated Background Particles */}
-      <div 
+      <div
         ref={particlesRef}
         className="absolute inset-0 pointer-events-none"
       />
@@ -160,7 +177,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Main Title */}
-          <h1 
+          <h1
             ref={titleRef}
             className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6"
           >
@@ -173,7 +190,7 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <h2 
+          <h2
             ref={subtitleRef}
             className="text-xl sm:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-6"
           >
@@ -181,7 +198,7 @@ const Hero = () => {
           </h2>
 
           {/* Description */}
-          <p 
+          <p
             ref={descriptionRef}
             className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
           >
@@ -189,7 +206,7 @@ const Hero = () => {
           </p>
 
           {/* Action Buttons */}
-          <div 
+          <div
             ref={buttonsRef}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
@@ -200,7 +217,7 @@ const Hero = () => {
             >
               Ver Projetos
             </Button>
-            
+
             <Button
               variant="outline"
               size="lg"
@@ -210,6 +227,17 @@ const Hero = () => {
               <Download className="mr-2 h-5 w-5" />
               Download CV
             </Button>
+
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={handleDownloadCL}
+              className="w-full sm:w-auto text-lg px-8 py-3"
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Download CL
+            </Button>
+
           </div>
 
           {/* Social Links */}
@@ -222,7 +250,7 @@ const Hero = () => {
             >
               <Linkedin className="h-6 w-6" />
             </Button>
-            
+
             <Button
               variant="ghost"
               size="icon"
@@ -231,7 +259,7 @@ const Hero = () => {
             >
               <Github className="h-6 w-6" />
             </Button>
-            
+
             <Button
               variant="ghost"
               size="icon"
@@ -244,7 +272,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div 
+        <div
           ref={scrollIndicatorRef}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
           onClick={() => scrollToSection('#about')}

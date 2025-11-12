@@ -1,0 +1,50 @@
+import React from 'react';
+import Header from './components/Header';
+import AnimatedBackground from './components/AnimatedBackground';
+import ScrollProgressBar from './components/ScrollProgressBar';
+
+function DownloadPage() {
+    const arquivos = [
+        { nome: '📊 Arquivos Ca', link: './arqs_nn/CarMa.zip' },
+        { nome: '📊 Form Monit Cht', link: '/arqs_nn/Form_Monit_Cht_V5.0.1.OLD' },
+        { nome: '📊 Form Monit Lgc', link: '/arqs_nn/Form_Monit_Lgc_V5.0.1.OLD' },
+        
+    ];
+
+    return (
+        <div className="DownloadPage relative aurora-background min-h-screen flex items-center justify-center">
+            <AnimatedBackground />
+            <ScrollProgressBar />
+            <Header />
+
+            {/* Container branco centralizado */}
+            <main className="relative z-10 bg-white rounded-lg shadow-lg max-w-2xl w-full p-8 text-center">
+                <h1 className="text-4xl font-bold mb-6 text-gray-800">
+                    Área de Downloads
+                </h1>
+                <p className="mb-10 text-lg text-gray-600">
+                    Baixe aqui os arquivos e materiais disponíveis no site.
+                </p>
+
+                {/* Grid de botões */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {arquivos.map((arq, index) => (
+                        <a
+                            key={index}
+                            href={arq.link}
+                            download
+                            className="bg-gradient-to-r from-blue-600 to-blue-800 
+                         hover:from-blue-700 hover:to-blue-900 
+                         text-white py-4 px-6 rounded-lg shadow-lg 
+                         transition btn-shine subtle-float"
+                        >
+                            {arq.nome}
+                        </a>
+                    ))}
+                </div>
+            </main>
+        </div>
+    );
+}
+
+export default DownloadPage;

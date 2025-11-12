@@ -15,6 +15,7 @@
   --popover-foreground: 222.2, 84%, 4.9%;
 
   --primary: 221.2, 83.2%, 53.9%;
+  --primary-one: 221.2, 83.2%, 53.9%;
   --primary-foreground: 210, 40%, 98%;
 
   --secondary: 210, 40%, 96.1%;
@@ -24,6 +25,7 @@
   --muted-foreground: 215.4, 16.3%, 46.9%;
 
   --accent: 210, 40%, 96.1%;
+  --accent-one: 210, 40%, 96.1%;
   --accent-foreground: 222.2, 47.4%, 11.2%;
 
   --destructive: 0, 84.2%, 60.2%;
@@ -36,7 +38,6 @@
   --radius: 0.5rem;
 }
 
-
 .dark {
   --background: 222.2, 84%, 4.9%;
   --foreground: 210, 40%, 98%;
@@ -48,6 +49,7 @@
   --popover-foreground: 210, 40%, 98%;
 
   --primary: 217.2, 91.2%, 59.8%;
+  --primary-one: 217.2, 91.2%, 59.8%;
   --primary-foreground: 222.2, 47.4%, 11.2%;
 
   --secondary: 217.2, 32.4%, 17.5%;
@@ -57,6 +59,7 @@
   --muted-foreground: 215, 20.2%, 65.1%;
 
   --accent: 217.2, 32.4%, 17.5%;
+  --accent-one: 217.2, 32.4%, 17.5%;
   --accent-foreground: 210, 40%, 98%;
 
   --destructive: 0, 62.8%, 30.6%;
@@ -67,14 +70,16 @@
   --ring: 217.2, 91.2%, 59.8%;
 }
 
-
 /* Custom styles */
 .text-gradient {
- /* background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));*/
-  background-clip: text;
+  background: linear-gradient(to right, hsl(var(--primary-one)), hsl(var(--accent-one))); 
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: hsl(var(--primary));
+  background-clip: text;
+
+  /* Para compatibilidade */
+  -webkit-text-fill-color: transparent; /* Chrome/Safari */
+  color: transparent; /* fallback geral */
+  display: inline-block; /* evita glitches em elementos inline puros */
 }
 
 .gradient-bg {
@@ -97,8 +102,8 @@
 }
 
 .skill-progress {
-  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
-  border-radius: 9999px;
+    background: linear-gradient(to right,hsl(var(--accent-one)),hsl(var(--primary-one)));
+    border-radius: 9999px;
 }
 
 /* Custom scrollbar for better aesthetics */
@@ -154,7 +159,7 @@ html {
 
 /* Hide default cursor */
 body {
-  cursor: none;
+  cursor: default;
   /* Hide default cursor */
 }
 
@@ -164,7 +169,7 @@ a,
 input,
 textarea,
 [role="button"] {
-  cursor: none;
+  cursor: pointer;
   /* Keep custom cursor for interactive elements */
 }
 
@@ -181,7 +186,7 @@ textarea,
 
 /* For the custom cursor to work, hide the default one */
 body {
-  cursor: none;
+  cursor: default;
 }
 
 /* Ensure interactive elements still have the custom cursor */
@@ -190,7 +195,7 @@ a,
 input,
 textarea,
 [role="button"] {
-  cursor: none;
+  cursor: pointer;
 }
 
 /* Add a slight transition to all elements for smoother interactions */

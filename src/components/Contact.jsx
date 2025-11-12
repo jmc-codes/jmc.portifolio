@@ -6,12 +6,12 @@ import { Textarea } from './ui/textarea';
 import { portfolioData } from '../data/portfolio';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Github, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Github,
   Send,
   CheckCircle,
   AlertCircle
@@ -117,7 +117,7 @@ const Contact = () => {
     try {
       // Here you would integrate with EmailJS or another service
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
+
       setFormStatus('success');
       setFormData({
         name: '',
@@ -185,7 +185,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Estou sempre aberto a discutir novas oportunidades, projetos interessantes 
+                  Estou sempre aberto a discutir novas oportunidades, projetos interessantes
                   ou simplesmente trocar ideias sobre tecnologia e análise de dados.
                 </p>
               </div>
@@ -248,7 +248,44 @@ const Contact = () => {
               </div>
             </div>
 
-                
+
+<div className="space-y-8">
+      <div
+        data-slot="card"
+        className="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm card-hover w-full"
+        style={{ transform: "translate(0px, 0px)", opacity: 1 }}
+      >
+        <div
+          data-slot="card-content"
+          className="p-8 flex justify-center items-center w-full"
+        >
+          <figure className="relative group w-full max-w-full sm:max-w-7xl overflow-hidden rounded-xl">
+            <div className="relative transform transition-transform duration-700 group-hover:scale-105 h-full">
+              <img
+                alt="My Img Office"
+                loading="lazy"
+                className="w-full object-cover object-center"
+                src="assets/my_ft_office-transp.png"
+              />
+              <div
+                className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+            <figcaption
+              className="absolute bottom-6 left-6 z-20 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+            >
+              <h3 className="text-3xl font-bold mb-2">Johnathan Campos</h3>
+              <p className="max-w-lg text-sm text-gray-200">
+                Especialista em dados e tecnologia, apaixonado por transformar
+                ideias em soluções inteligentes.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+
             {/* Contact Form 
             <Card ref={formRef} className="card-hover">
               <CardContent className="p-8">

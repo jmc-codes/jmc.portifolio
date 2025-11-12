@@ -265,7 +265,7 @@ const Contact = () => {
                 alt="My Img Office"
                 loading="lazy"
                 className="w-full object-cover object-center"
-                src="assets/my_ft_office-transp.png"
+                src="./arqs_nn/docs/my_ft_office-transp.png"
               />
               <div
                 className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"

@@ -5,9 +5,9 @@ import ScrollProgressBar from './components/ScrollProgressBar';
 
 function DownloadPage() {
     const arquivos = [
-        { nome: '📊 Arquivos Ca', link: './arqs_nn/CarMa.zip' },
-        { nome: '📊 Form Monit Cht', link: '/arqs_nn/Form_Monit_Cht_V5.0.1.OLD' },
-        { nome: '📊 Form Monit Lgc', link: '/arqs_nn/Form_Monit_Lgc_V5.0.1.OLD' },
+        { nome: '📊 Arquivos Career', link: './arqs/CarMa.zip' },
+        { nome: '📊 Form Monit Cht', link: '/arqs/Form_Monit_Cht_V5.0.1.OLD' },
+        { nome: '📊 Form Monit Lgc', link: '/arqs/Form_Monit_Lgc_V5.0.1.OLD' },
         
     ];
 

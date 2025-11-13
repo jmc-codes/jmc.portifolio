@@ -139,7 +139,7 @@ const Hero = () => {
   const handleDownloadCV = () => {
     console.log('Iniciando download...');
     const link = document.createElement('a');
-    link.href = './arqs_nn/docs/Profile.pdf';
+    link.href = './arqs/docs/Profile.pdf';
     link.download = 'Johnathan_Campos_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -150,7 +150,7 @@ const Hero = () => {
    const handleDownloadCL = () => {
     console.log('Iniciando download...');
     const link = document.createElement('a');
-    link.href = './arqs_nn/docs/Crt_JMC_Port.pdf';
+    link.href = './arqs/docs/Crt_JMC_Port.pdf';
     link.download = 'Johnathan_Campos_CL.pdf';
     document.body.appendChild(link);
     link.click();

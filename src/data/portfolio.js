@@ -150,7 +150,13 @@ export const portfolioData = {
         "Tendências históricas e comparativos por período",
         "Segmentação por região, produto ou canal de atendimento",
         "Alertas automáticos para quedas no índice de satisfação"
-      ]
+      ],
+      images: [],
+      // Para incorporar o dashboard do Power BI, cole a URL pública de embed aqui:
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 2,
@@ -165,7 +171,12 @@ export const portfolioData = {
         "Segmentação por grupos de atendimento e serviços",
         "Identificação de gargalos e oportunidades de melhoria",
         "Filtros dinâmicos por data, equipe e operador"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 3,
@@ -180,7 +191,12 @@ export const portfolioData = {
         "Tempo médio de resposta e resolução",
         "Identificação de gargalos no atendimento",
         "Relatórios comparativos por canal e equipe"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 4,
@@ -194,7 +210,12 @@ export const portfolioData = {
         "Alertas para falhas e indisponibilidades",
         "Histórico de incidentes e tempo de recuperação",
         "Métricas de uso de CPU, memória e rede"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 5,
@@ -208,163 +229,222 @@ export const portfolioData = {
         "Pontuação por operador e equipe",
         "Relatórios de evolução de qualidade",
         "Integração com feedback de clientes"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 6,
       title: "Monitoramento de Alertas – Operações",
       description: "Central de alertas para eventos críticos e acompanhamento de resolução",
       technologies: ["Power BI", "APIs", "SQL"],
-      icon: "GitBranch",
+      icon: "Bell",
       category: "BI",
       highlights: [
         "Registro e categorização de alertas",
         "Priorização por criticidade",
         "Tempo médio de resposta",
         "Histórico e recorrência de eventos"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 7,
       title: "Relação de Tickets – Suporte",
       description: "Visão consolidada de tickets de suporte e status de atendimento",
       technologies: ["Power BI", "APIs", "SQL"],
-      icon: "GitBranch",
+      icon: "Ticket",
       category: "BI",
       highlights: [
         "Listagem e filtragem por status, prioridade e responsável",
         "Tempo médio de resolução",
         "Volume de tickets por período",
         "Integração com sistemas de help desk"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 8,
       title: "Indicadores de Leads – Vendas",
       description: "Painel de acompanhamento de geração e conversão de leads",
       technologies: ["Power BI", "Sharepoint", "Power Apps"],
-      icon: "GitBranch",
+      icon: "Target",
       category: "BI",
       highlights: [
         "Volume de leads gerados por canal",
         "Taxa de conversão por etapa do funil",
         "Custo por lead",
         "Análise de campanhas e ROI"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 9,
       title: "CrossSelling – Oportunidades Inteligentes",
       description: "Aplicativo para identificar e sugerir vendas cruzadas de forma automática e estratégica",
       technologies: ["Power Apps", "Power Automate", "Sharepoint"],
-      icon: "GitBranch",
+      icon: "ShoppingCart",
       category: "Aplicativo",
       highlights: [
         "Sugestões automáticas de produtos complementares",
         "Integração com CRM para histórico de clientes",
         "Relatórios de conversão de cross-sell",
         "Interface mobile e web responsiva"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 10,
       title: "Gerenciador de Notas NPS",
       description: "Controle centralizado das avaliações e notas de satisfação dos clientes",
       technologies: ["Power Apps", "Sharepoint", "Power Bi"],
-      icon: "GitBranch",
+      icon: "ClipboardList",
       category: "Aplicativo",
       highlights: [
         "Registro e consulta de notas NPS",
         "Filtros por período, produto e região",
         "Integração com dashboards analíticos",
         "Exportação de relatórios"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 11,
       title: "Callbacks NPS – Retorno Estratégico",
       description: "Aplicativo para gestão de retornos a clientes com base em feedbacks NPS",
       technologies: ["Power Apps", "Sharepoint", "Power Bi"],
-      icon: "GitBranch",
+      icon: "PhoneCallback",
       category: "Aplicativo",
       highlights: [
         "Lista automática de clientes para retorno",
         "Priorização por nota e criticidade",
         "Registro de interações e follow-ups",
         "Notificações para prazos de contato"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 12,
       title: "Monitoria de Qualidade – Auditoria de Processos",
       description: "Aplicativo para avaliação e acompanhamento da qualidade de processos e atendimentos",
       technologies: ["Power Apps", "Sharepoint", "Power Bi"],
-      icon: "GitBranch",
+      icon: "CheckCircle",
       category: "Aplicativo",
       highlights: [
         "Formulários de avaliação customizáveis",
         "Pontuação automática por critérios",
         "Relatórios de evolução de qualidade",
         "Integração com feedback de clientes"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 13,
       title: "Importação Automática de Dados – Chat",
       description: "Fluxo automatizado para coleta e integração de dados de atendimento via chat",
       technologies: ["Power Automate", "APIs", "SQL"],
-      icon: "GitBranch",
+      icon: "MessageSquare",
       category: "Automação",
       highlights: [
         "Importação diária de dados de conversas",
         "Integração com base de dados central",
         "Validação e tratamento automático de informações",
         "Geração de logs para auditoria"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 14,
       title: "Importação Automática – NPS, Ocorrências e Chat",
       description: "Automação para consolidar dados de NPS, ocorrências e interações de chat em um único repositório",
       technologies: ["Power Automate", "APIs", "SQL"],
-      icon: "GitBranch",
+      icon: "RefreshCw",
       category: "Automação",
       highlights: [
         "Coleta unificada de múltiplas fontes",
         "Transformação e padronização de dados",
         "Carga automática em data warehouse",
         "Monitoramento de performance do fluxo"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 15,
       title: "Importação de Dados – Telefonia",
       description: "Fluxo automatizado para ingestão de dados de chamadas e métricas de telefonia",
       technologies: ["Power Automate", "APIs", "SQL"],
-      icon: "GitBranch",
+      icon: "PhoneIncoming",
       category: "Automação",
       highlights: [
         "Importação de registros de chamadas",
         "Integração com sistemas de Voice Analytics",
         "Validação e enriquecimento de dados",
         "Execução programada e monitorada"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     },
     {
       id: 16,
       title: "Monitoramento de Alertas – Automação",
       description: "Automação para detecção e notificação de eventos críticos em tempo real",
       technologies: ["Power Automate", "APIs", "Outlook"],
-      icon: "GitBranch",
+      icon: "AlertTriangle",
       category: "Automação",
       highlights: [
         "Gatilhos automáticos para eventos críticos",
         "Envio de alertas por e-mail e Teams",
         "Registro de histórico de alertas",
         "Priorização por nível de criticidade"
-      ]
+      ],
+      images: [],
+      powerBiEmbed: "",
+      githubLink: "",
+      liveDemoLink: "",
+      status: "concluído"
     }
-    
   ],
 
   languages: [

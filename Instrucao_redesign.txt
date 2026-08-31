@@ -1,0 +1,910 @@
+REESTRUTURAÇÃO PROFISSIONAL DO PORTFÓLIO
+
+Você é um Senior Product Designer + UX Designer + Front-end Engineer + Tech Recruiter especializado em Data, BI, Analytics e tecnologia.
+
+Preciso evoluir meu portfólio profissional existente:
+
+https://jmc-codes.github.io/jmc.portifolio/
+
+O projeto está hospedado no GitHub e utiliza React + Vite + Tailwind CSS, com componentes, animações e estrutura já implementados.
+
+OBJETIVO PRINCIPAL
+
+Não quero apenas um redesign visual.
+
+Quero transformar o portfólio de um site pessoal bonito em uma ferramenta profissional de posicionamento e recrutamento, capaz de comunicar rapidamente:
+
+«Sou um profissional de Dados que atua na interseção entre BI, Analytics, Automação, Applied AI e Tecnologia, transformando problemas operacionais e de negócio em soluções orientadas a dados.»
+
+O portfólio deve transmitir senioridade, maturidade técnica, capacidade analítica e visão de negócio.
+
+A prioridade é:
+
+clareza > posicionamento > evidência > experiência > estética
+
+Não adicione elementos apenas porque são visualmente interessantes.
+
+---
+
+1. PRESERVAR A BASE EXISTENTE
+
+Não reconstruir o projeto do zero sem necessidade.
+
+Preservar:
+
+- React
+- Vite
+- Tailwind CSS
+- estrutura de componentes
+- arquitetura existente
+- responsividade
+- modal de projetos
+- galeria
+- integração com Power BI
+- navegação
+- acessibilidade
+- animações que realmente agreguem valor
+- dark/light mode, caso já existente
+- componentes reutilizáveis
+
+A arquitetura atual possui uma boa base técnica. Evolua-a em vez de substituí-la gratuitamente.
+
+Antes de alterar, analise o código existente e reutilize componentes sempre que possível.
+
+---
+
+2. NOVO POSICIONAMENTO PROFISSIONAL
+
+O posicionamento atual está excessivamente genérico.
+
+Evitar frases como:
+
+- "Transformando dados em insights estratégicos"
+- "Analista de Dados & BI"
+- "Apaixonado por dados"
+- "Especialista em Power BI"
+
+Essas frases são genéricas e não diferenciam o profissional.
+
+O posicionamento deve enfatizar:
+
+Dados + BI + Analytics + Automação + Applied AI + Tecnologia + contexto de negócio/operação.
+
+Sugestão de headline:
+
+«Dados, Analytics, BI e Automação aplicados a problemas reais de negócio.»
+
+Subheadline:
+
+«Atuo na interseção entre Dados, Business Intelligence, Analytics, Applied AI, Automação e Tecnologia, transformando processos e dados complexos em soluções que apoiam decisões, aumentam eficiência e geram valor para o negócio.»
+
+Criar uma apresentação curta, objetiva e profissional.
+
+Não utilizar linguagem exageradamente promocional.
+
+---
+
+3. HERO
+
+Reestruturar o Hero para responder imediatamente:
+
+1. Quem sou?
+2. O que faço?
+3. Qual problema resolvo?
+4. Onde está minha experiência?
+5. Onde estão minhas provas?
+
+Estrutura sugerida:
+
+Nome
+
+Johnathan [nome completo existente no projeto]
+
+Cargo / posicionamento
+
+Data & BI | Analytics | Automação | Applied AI
+
+Proposta
+
+Texto curto explicando a atuação profissional.
+
+Contexto
+
+Destacar experiência em:
+
+- ambientes de grande porte
+- meios de pagamento
+- operações
+- sistemas críticos
+- dados
+- automação
+- analytics
+
+CTAs
+
+Priorizar somente:
+
+Ver projetos
+
+Ver currículo
+
+LinkedIn e GitHub devem existir, mas como ações secundárias.
+
+Evitar excesso de botões.
+
+---
+
+4. PROJETOS: PRINCIPAL PRIORIDADE
+
+Essa é a maior mudança.
+
+O portfólio atualmente possui muitos projetos, mas vários são apresentados principalmente por descrição.
+
+Transformar a seção de projetos em uma coleção de cases profissionais.
+
+Não tratar projeto como simples item de currículo.
+
+Cada projeto deve responder:
+
+Problema
+
+Qual problema existia?
+
+Contexto
+
+Por que esse problema importava?
+
+Solução
+
+O que foi desenvolvido?
+
+Dados / arquitetura
+
+Como os dados eram obtidos, tratados e utilizados?
+
+Tecnologias
+
+Quais ferramentas foram utilizadas?
+
+Resultado
+
+Qual foi o impacto?
+
+Evidência
+
+Mostrar:
+
+- screenshots
+- dashboards
+- GIFs
+- arquitetura
+- fluxos
+- código quando possível
+- demo quando possível
+
+---
+
+5. CURADORIA DOS PROJETOS
+
+Não destacar todos os projetos com o mesmo peso.
+
+Criar uma hierarquia.
+
+Projetos principais
+
+Priorizar aproximadamente 6 cases.
+
+Sugestão:
+
+1. Dashboard NPS
+2. Voice Analytics
+3. Chat Analytics
+4. Performance / Monitoring
+5. Automação operacional
+6. Aplicativo / solução interna
+
+Os demais podem ficar em uma seção:
+
+«Outros projetos»
+
+ou
+
+«Mais soluções»
+
+Isso transmite curadoria e senioridade.
+
+---
+
+6. CARD DOS PROJETOS
+
+O card deve mostrar rapidamente:
+
+Categoria
+
+Nome
+
+Problema/objetivo em uma frase
+
+Tecnologias principais
+
+Impacto
+
+Exemplo:
+
+Dashboard NPS
+
+«Automatização do acompanhamento de NPS, consolidando dados de diferentes fontes em uma visão analítica para acompanhamento de desempenho e identificação de oportunidades.»
+
+Power BI · Power Query · Power Automate · ETL
+
+Impacto: redução de esforço manual e maior velocidade na análise.
+
+Não inventar números.
+
+---
+
+7. PÁGINA/MODAL DO PROJETO
+
+Manter o modal existente, pois a estrutura técnica é boa.
+
+Mas reorganizar o conteúdo.
+
+Ordem:
+
+01. Contexto
+
+02. Problema
+
+03. Solução
+
+04. Arquitetura / fluxo
+
+05. Tecnologias
+
+06. Resultados
+
+07. Evidências
+
+08. Dashboard / Demo
+
+09. Código
+
+Criar visualmente uma narrativa de case.
+
+O visitante deve conseguir entender o projeto sem precisar ler um bloco enorme de texto.
+
+---
+
+8. EVIDÊNCIA DOS PROJETOS
+
+Esse é um ponto crítico.
+
+Sempre que houver imagens reais disponíveis, utilizá-las.
+
+Se um projeto possui dashboard Power BI:
+
+mostrar o dashboard.
+
+Se possui aplicação:
+
+mostrar screenshots da aplicação.
+
+Se possui automação:
+
+mostrar o fluxo.
+
+Se possui arquitetura:
+
+mostrar a arquitetura.
+
+Se possui código público:
+
+mostrar link para GitHub.
+
+Não utilizar imagens genéricas apenas para preencher espaço.
+
+Se não houver evidência suficiente, manter o projeto em "Outros projetos" em vez de transformá-lo artificialmente em um case principal.
+
+---
+
+9. SOBRE MIM
+
+Redesenhar a seção "Sobre Mim".
+
+Ela não deve parecer um resumo de currículo.
+
+Deve explicar:
+
+- trajetória
+- área de atuação
+- contexto profissional
+- tipo de problema que resolve
+- evolução de carreira
+- diferencial
+
+Utilizar narrativa semelhante a:
+
+«Minha atuação está na interseção entre Dados, Business Intelligence, Analytics, Automação, Applied AI e Tecnologia.
+
+Ao longo da minha trajetória, desenvolvi soluções para ambientes de grande porte, especialmente relacionados a operações e meios de pagamento, trabalhando com dados, sistemas, automações, indicadores e processos críticos.
+
+Meu trabalho envolve entender o problema de negócio, estruturar os dados, automatizar processos e transformar informação em soluções que apoiem decisões e aumentem eficiência.»
+
+Adaptar ao conteúdo real do projeto.
+
+Não exagerar.
+
+---
+
+10. CORRIGIR INFORMAÇÕES DESATUALIZADAS
+
+Revisar todo o conteúdo.
+
+Não utilizar informações antigas como:
+
+«"5+ anos de experiência"»
+
+quando houver informação mais atualizada.
+
+Usar a experiência profissional real e atual.
+
+Não inventar:
+
+- anos
+- números
+- resultados
+- cargos
+- certificações
+- tecnologias
+- métricas
+
+Se uma informação estiver inconsistente, sinalizar no código ou conteúdo para revisão.
+
+---
+
+11. MÉTRICAS
+
+Revisar completamente a seção de estatísticas.
+
+Não utilizar métricas apenas para deixar o site impressionante.
+
+Exemplos problemáticos:
+
+«Power BI 95%»
+
+«Comunicação 92%»
+
+«Resolução de problemas 95%»
+
+Essas porcentagens devem ser removidas.
+
+Não existe uma escala objetiva para isso.
+
+Substituir por informações verificáveis.
+
+Exemplo:
+
+7+ anos de experiência profissional
+
+Projetos de BI, Analytics e Automação
+
+Experiência em ambientes críticos
+
+Atuação em meios de pagamento
+
+Somente utilizar números que possam ser defendidos em uma entrevista.
+
+---
+
+12. SKILLS
+
+Substituir barras de porcentagem por níveis qualitativos ou agrupamento por domínio.
+
+Exemplo:
+
+Core
+
+- Power BI
+- SQL
+- Power Query
+- DAX
+- Power Automate
+
+Dados & Engenharia
+
+- Python
+- ETL
+- Databricks
+- Spark
+- APIs
+
+Automação & Low-code
+
+- Power Automate
+- Power Apps
+- VBA
+
+Analytics & AI
+
+- Data Analytics
+- Applied AI
+- Voice Analytics
+- Text Analytics
+
+Não inventar níveis de conhecimento.
+
+Se houver níveis, utilizar:
+
+Avançado / Intermediário / Em desenvolvimento
+
+e somente quando isso for verdadeiro.
+
+---
+
+13. SOFT SKILLS
+
+Não apresentar soft skills como porcentagens.
+
+Remover:
+
+- Comunicação 92%
+- Resolução de problemas 95%
+- etc.
+
+Substituir por competências demonstradas:
+
+Comunicação técnica
+
+Tradução de problemas operacionais em requisitos, indicadores e soluções.
+
+Análise de problemas
+
+Investigação de dados, processos e sistemas para identificação de causas e oportunidades.
+
+Visão de negócio
+
+Conexão entre indicadores, operação e tomada de decisão.
+
+Automação
+
+Identificação de tarefas manuais e transformação em fluxos automatizados.
+
+---
+
+14. EXPERIÊNCIA PROFISSIONAL
+
+Melhorar a apresentação da experiência.
+
+Não transformar em uma lista de responsabilidades.
+
+Utilizar a estrutura:
+
+Contexto → Problema → Ação → Resultado
+
+Dar destaque para:
+
+- Fiserv
+- meios de pagamento
+- sistemas críticos
+- suporte
+- dados
+- automação
+- BI
+- analytics
+- monitoramento
+- melhoria de processos
+
+O objetivo é mostrar evolução:
+
+Operação/Sistemas → Dados → BI → Analytics → Automação → Applied AI
+
+Isso deve contar uma história profissional.
+
+---
+
+15. FORMAÇÃO
+
+Manter formação acadêmica.
+
+Simplificar visualmente.
+
+Apresentar:
+
+Curso
+
+Instituição
+
+Período
+
+Status
+
+Não utilizar excesso de elementos gráficos.
+
+---
+
+16. CERTIFICAÇÕES E CURSOS
+
+Remover indicadores artificiais de "progresso".
+
+Não mostrar:
+
+«Python 100%»
+
+«SQL 100%»
+
+«IA 55%»
+
+Apresentar como currículo profissional:
+
+Certificação / Curso
+
+Instituição
+
+Ano
+
+Link, quando existir.
+
+Separar:
+
+Certificações
+
+de
+
+Cursos / Formação complementar
+
+---
+
+17. FOTO
+
+A seção Sobre atualmente utiliza um placeholder com "JC".
+
+Preparar a estrutura para uma fotografia profissional real.
+
+A imagem deve:
+
+- ter proporção adequada
+- possuir alt text
+- funcionar em desktop/mobile
+- manter visual profissional
+- não parecer avatar genérico de template
+
+Se não houver foto disponível, criar um placeholder visual discreto e profissional, sem dar aparência de conteúdo final.
+
+---
+
+18. DESIGN
+
+Manter uma estética:
+
+minimalista + tecnológica + profissional + elegante
+
+Evitar:
+
+- excesso de gradientes
+- excesso de glow
+- excesso de partículas
+- excesso de animações
+- elementos flutuantes sem função
+- visual excessivamente gamer
+- estética de landing page de startup
+
+O design deve parecer compatível com um profissional que trabalha em:
+
+- Data
+- BI
+- Analytics
+- Tecnologia
+- grandes empresas
+- ambientes corporativos
+
+A estética deve transmitir senioridade, não quantidade de efeitos.
+
+---
+
+19. ANIMAÇÕES
+
+Manter GSAP/Framer Motion quando agregarem valor.
+
+Priorizar:
+
+- entrada suave
+- transições
+- microinterações
+- feedback visual
+- navegação
+
+Reduzir animações decorativas.
+
+Não sacrificar performance em troca de efeitos.
+
+Respeitar:
+
+"prefers-reduced-motion"
+
+---
+
+20. UX
+
+O visitante deve conseguir chegar rapidamente a:
+
+Quem sou → O que faço → Projetos → Evidências → Experiência → Contato
+
+Reduzir fricção.
+
+Evitar:
+
+- textos excessivamente longos
+- excesso de cliques
+- excesso de menus
+- elementos sem função
+- CTAs repetidos
+
+---
+
+21. RESPONSIVIDADE
+
+Testar cuidadosamente:
+
+- desktop
+- notebook
+- tablet
+- celular
+
+Especial atenção para:
+
+- Hero
+- cards
+- modal
+- galerias
+- dashboards Power BI
+- tabelas
+- navegação
+- botões
+- tipografia
+
+O portfólio precisa parecer intencionalmente projetado para mobile, não apenas "adaptado".
+
+---
+
+22. ACESSIBILIDADE
+
+Garantir:
+
+- alt text
+- contraste adequado
+- navegação por teclado
+- foco visível
+- aria-labels quando necessário
+- botões semanticamente corretos
+- links externos com comportamento seguro
+- modal acessível
+- Escape para fechar modal
+- foco adequado no modal
+
+A implementação existente já possui alguns desses recursos. Preservar e melhorar.
+
+---
+
+23. PERFORMANCE
+
+Revisar dependências e código.
+
+Não remover bibliotecas indiscriminadamente, mas identificar dependências desnecessárias.
+
+Priorizar:
+
+- lazy loading
+- imagens otimizadas
+- code splitting quando necessário
+- evitar renders desnecessários
+- evitar animações pesadas
+- carregamento sob demanda de Power BI
+- assets otimizados
+
+Especialmente importante porque dashboards incorporados podem ser pesados.
+
+---
+
+24. SEO
+
+Adicionar/revisar:
+
+- "<title>"
+- meta description
+- Open Graph
+- Twitter/X card
+- canonical
+- favicon
+- robots
+- sitemap, quando aplicável
+- headings semânticos
+
+Sugestão de title:
+
+«Johnathan | Data, BI, Analytics & Automação»
+
+Descrição:
+
+«Portfólio profissional de Johnathan, com projetos em Data Analytics, Business Intelligence, Automação, Applied AI e Tecnologia.»
+
+---
+
+25. GITHUB
+
+O GitHub deve ser tratado como parte da prova técnica.
+
+Adicionar links claros para:
+
+- GitHub
+- repositórios relevantes
+- projetos públicos
+- código
+
+Nos projetos em que o código não pode ser público por questões corporativas, deixar explícito:
+
+«Projeto profissional | Código proprietário»
+
+Isso é melhor do que simplesmente não mostrar nada.
+
+---
+
+26. CONTATO
+
+Criar uma seção de contato objetiva.
+
+Prioridade:
+
+LinkedIn
+
+GitHub
+
+E-mail
+
+O formulário de contato pode permanecer, mas não deve ser o principal mecanismo.
+
+Garantir que o envio realmente funcione.
+
+Não expor credenciais ou chaves no front-end.
+
+---
+
+27. DIFERENCIAL PROFISSIONAL
+
+Criar uma pequena seção visual destacando o diferencial:
+
+Da operação ao dado
+
+Entendimento de processos e sistemas.
+
+Do dado à informação
+
+Modelagem, ETL, BI e Analytics.
+
+Da informação à ação
+
+Automação, aplicações e suporte à decisão.
+
+Essa seção deve funcionar como uma síntese visual da carreira.
+
+---
+
+28. MENSAGEM FINAL
+
+No final do portfólio, não utilizar frases genéricas como:
+
+«"Vamos transformar dados em resultados?"»
+
+Usar uma mensagem profissional e objetiva.
+
+Exemplo:
+
+«Construo soluções que conectam dados, tecnologia e negócio.»
+
+Complemento:
+
+«Projetos, experiências e soluções desenvolvidas ao longo da minha trajetória profissional.»
+
+CTA:
+
+LinkedIn
+
+Currículo
+
+---
+
+29. PRINCÍPIO FUNDAMENTAL
+
+O portfólio não deve tentar provar que eu conheço muitas ferramentas.
+
+Ele deve provar que eu sei:
+
+entender problemas → trabalhar com dados → construir soluções → automatizar processos → gerar informação → apoiar decisões.
+
+Tecnologia é meio.
+
+Problema e resultado são o protagonista.
+
+---
+
+30. REGRAS DE CONTEÚDO
+
+Nunca inventar informações.
+
+Nunca inventar:
+
+- resultados
+- percentuais
+- economia financeira
+- quantidade de usuários
+- número de projetos
+- certificações
+- experiência
+- tecnologias
+- cargos
+- clientes
+
+Quando uma informação não estiver disponível, manter o conteúdo neutro ou utilizar um placeholder claramente identificável para posterior preenchimento.
+
+Não transformar hipóteses em fatos.
+
+---
+
+31. CRITÉRIO DE SUCESSO
+
+Ao abrir o portfólio pela primeira vez, um recrutador deve conseguir responder em aproximadamente 30 segundos:
+
+Quem é Johnathan?
+
+«Profissional de Dados/BI/Analytics.»
+
+O que ele faz?
+
+«Conecta dados, tecnologia, automação e negócio.»
+
+Qual experiência ele possui?
+
+«Experiência profissional em ambiente corporativo de grande porte e meios de pagamento.»
+
+Ele realmente constrói coisas?
+
+«Sim, existem cases e evidências.»
+
+Posso entrar em contato?
+
+«Sim, LinkedIn, GitHub e currículo estão facilmente acessíveis.»
+
+Se essas cinco respostas não forem claras, continue refinando.
+
+---
+
+32. ENTREGA TÉCNICA
+
+Antes de finalizar:
+
+1. Analisar o código atual.
+2. Fazer as alterações diretamente nos componentes existentes.
+3. Atualizar os dados do portfólio.
+4. Corrigir informações desatualizadas.
+5. Melhorar os projetos.
+6. Melhorar responsividade.
+7. Revisar acessibilidade.
+8. Revisar SEO.
+9. Revisar performance.
+10. Executar build.
+11. Executar lint.
+12. Corrigir erros.
+13. Verificar links.
+14. Verificar imagens.
+15. Verificar modal.
+16. Verificar Power BI.
+17. Verificar formulário.
+18. Garantir que não existam informações inventadas.
+19. Garantir que o layout final continue consistente.
+
+Resultado esperado
+
+Um portfólio que pareça de um profissional de Dados/BI/Analytics experiente, e não apenas de alguém que construiu um site tecnicamente sofisticado.
+
+A estética deve chamar atenção.
+
+Mas o conteúdo deve convencer.
